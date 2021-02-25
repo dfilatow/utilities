@@ -29,7 +29,7 @@ fileinfo2csv <- function(wd = "H:/", fn = "foldercontent") {
     
     #create the fileinfo dataframe and add/format some additional fields
     fileinfo <-dir_info(wd, fail = T, all = T, recurse = T) 
-    fileinfo$size_bytes <- as.integer(fileinfo$size)
+    fileinfo$size_bytes <- as.double(fileinfo$size)
     fileinfo$size_mb <- as.integer(fileinfo$size_bytes*0.000001)
     fileinfo$size_gb <- as.integer(fileinfo$size_bytes * 0.000000001)
     fileinfo$file <- path_file(fileinfo$path)
